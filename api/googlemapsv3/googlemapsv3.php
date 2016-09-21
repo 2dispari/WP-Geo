@@ -256,6 +256,8 @@ class WPGeo_API_GoogleMapsV3 extends WPGeo_API {
 							zoomControlOptions : {
 								' . $this->zoom_control_options_js( $map->mapcontrol ) . '
 							},
+							/* to add other parameters you can go to: http://software.stadtwerk.org/google_maps_colorizr/   */
+							styles:[{ featureType: "landscape", stylers: [ { hue: "#ffffff" },{ saturation: -100 },{ lightness: 100 },{ visibility: "on" } ] }, { featureType: "water", stylers: [ { hue: "#cccccc" },{ saturation: -100 },{ lightness: 17},{ visibility: "on" } ] }],
 							scrollwheel        : false
 						};
 						' . $map->get_js_id() . ' = new google.maps.Map(document.getElementById("' . $map->get_dom_id() . '"), mapOptions);
